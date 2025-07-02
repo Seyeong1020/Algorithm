@@ -20,7 +20,13 @@ std::vector<int> others(std::vector<int> team){
     }
 
     for (int i =0; i<team.size(); i++){
-        others.erase(std::remove(others.begin(), others.end(), team[i]), others.end());     
+        others.erase(std::remove(others.begin(), others.end(), team[i]), others.end());    
+        // others = {1, 2, 3, 2, 4}
+        // it = std::remove(others.begin(), others.end(), 2)
+        // => others = {1, 3, 4, ?, ?}, 
+        // it는 남아있는 요소 중 마지막 애의 다음을 가리킴
+        // 즉, erase는 남아있는 요소 중 마지막 애의 다음~벡터의 끝까지 지우게 됨
+        // (물음표를 지우게 되는거지)
     }
     return others;
 
