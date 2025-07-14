@@ -57,7 +57,6 @@ void dfs(int N, int k){
         dfs(N, i+1);
         team.pop_back();
         visited[i] = false;
-
     }
 }
 
